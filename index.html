@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>
+Sqaure Finder App by Garv Hemnani
+</title>
+<style>
+* {font-size : 60px}
+</style>
+</head>
+<body style="background-color:azure">
+<center>
+<h1> Square Finder App </h1>
+<form onsubmit = "square()">
+<input type = "number" step = "any" placeholder="Enter Number" id = "num" />
+<br><br>
+<input type = "submit" value = "Find Square" />
+</form>
+<h2 id = "msg"></h2>
+<script>
+	function square()
+	{
+		event.preventDefault();
+		let num = document.getElementById("num");
+		let msg = document.getElementById("msg");
+
+		if (msg.value == "") {
+			alert("You did not Enter a Number ")
+			msg.innerHTML = "";
+			num.focus();
+			return;
+		}
+		
+		let n = parseFloat(num.value);
+		let r = n*n;
+		let ans = "Sqaure is = " + r.toFixed(4);
+		msg.innerHTML = ans;
+	}
+</script>
+</center>
+</body>
+</html>
